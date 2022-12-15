@@ -5,7 +5,7 @@ import os
 import time
 import threading
 
-webcam = cv2.VideoCapture(1)
+webcam = cv2.VideoCapture(0)
 cv2.namedWindow("Default", cv2.WINDOW_NORMAL)
 cv2.moveWindow("Default", 0,0)
 cv2.setWindowProperty ("Default", cv2.WND_PROP_FULLSCREEN, cv2.WINDOW_FULLSCREEN)
@@ -91,8 +91,10 @@ while webcam.isOpened():
 
     if gender == "male": 
         cv2.setWindowProperty("Male", cv2.WND_PROP_TOPMOST, 1)
+        print("nam")
     elif gender == "female":
         cv2.setWindowProperty("Female", cv2.WND_PROP_TOPMOST, 1)
+        print("nu")
     else: 
         thread = threading.Thread(target=shuffle)
         thread.start()
