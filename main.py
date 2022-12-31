@@ -18,14 +18,17 @@ cv2.setWindowProperty ("Female", cv2.WND_PROP_FULLSCREEN, cv2.WINDOW_FULLSCREEN)
 cv2.setWindowProperty("Default", cv2.WND_PROP_TOPMOST, 1)
 
 def setup():
+    # malePath = os.path.normpath(os.path.expanduser("~/OneDrive/Desktop/GenderDetection2/male"))
     malePath = os.path.normpath(os.path.expanduser("~/Desktop/GenderDetection2/male"))
     maleVideo = "/" + os.listdir(malePath)[0]
     male = cv2.VideoCapture(malePath + maleVideo)
 
+    # femalePath = os.path.normpath(os.path.expanduser("~/OneDrive/Desktop/GenderDetection2/female"))
     femalePath = os.path.normpath(os.path.expanduser("~/Desktop/GenderDetection2/female"))
     femaleVideo = "/" + os.listdir(femalePath)[0]
     female = cv2.VideoCapture(femalePath + femaleVideo)
 
+    # defaultPath = os.path.normpath(os.path.expanduser("~/OneDrive/Desktop/GenderDetection2/default"))
     defaultPath = os.path.normpath(os.path.expanduser("~/Desktop/GenderDetection2/default"))
     defaultVideo = "/" + os.listdir(defaultPath)[0]
     default = cv2.VideoCapture(defaultPath + defaultVideo)
